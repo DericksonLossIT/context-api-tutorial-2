@@ -1,11 +1,26 @@
-import React from 'react';
+import React from "react";
 
-import Counter from './components/Counter';
+import CountProvider from "./context/Count";
+import ThemeProvider from "./context/Theme";
+
+import Counter from "./components/Counter";
+import Mirror from "./components/Mirror";
+import Container from "./components/Container";
 
 function App() {
-    return (
-        <div>
-            <Counter />
-        </div>
-    );
+  return (
+    <ThemeProvider>
+      <CountProvider>
+        <Container>
+          <Counter />
+
+          <hr />
+
+          <Mirror />
+        </Container>
+      </CountProvider>
+    </ThemeProvider>
+  );
 }
+
+export default App;

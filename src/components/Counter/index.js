@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React from "react";
+
+import { useCount } from "../../context/Count";
 
 export default function Counter() {
-    const [ count, setCount ] = useState(0);
+    const { count, setCount } = useCount();
 
-    return (
-        <div>
-            <span>
-                <b>Count: </b>
-                {count}
-            </span>
+  return (
+    <div>
+      <span>
+        <b>Counter: </b> {count}
+        
+      </span>
 
-            <br />
+      <br />
 
-            <button onClick={() => setCount(count + 1)}>Increase</button> 
-        </div>
-    );
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
 }
